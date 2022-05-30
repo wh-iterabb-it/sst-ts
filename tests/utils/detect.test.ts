@@ -187,7 +187,143 @@ import {
 				const expected = false;
 				const resp = isBoolean(undefined);
 				expect(resp).toEqual(expected);
-			})
+			});
+		});
+		describe('isInteger - Unit Tests', () => {
+			it('should return true for 1', () => {
+				const expected = true;
+				const resp = isInteger(1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 1.0', () => {
+				const expected = true;
+				const resp = isInteger(1.0);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 1.1', () => {
+				const expected = false;
+				const resp = isInteger(1.1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 0', () => {
+				const expected = true;
+				const resp = isInteger(0);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 0.0', () => {
+				const expected = true;
+				const resp = isInteger(0.0);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 0.1', () => {
+				const expected = false;
+				const resp = isInteger(0.1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for -1', () => {
+				const expected = true;
+				const resp = isInteger(-1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for {}', () => {
+				const expected = false;
+				const resp = isInteger({});
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for []', () => {
+				const expected = false;
+				const resp = isInteger([]);
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for new Date()', () => {
+				const expected = false;
+				const resp = isInteger(new Date());
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for new RegExp()', () => {
+				const expected = false;
+				const resp = isInteger(new RegExp(""));
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for new Error()', () => {
+				const expected = false;
+				const resp = isInteger(new Error());
+				expect(resp).toEqual(expected);
+			});
+		});
+		describe('isFinite - Unit Tests', () => {
+			it('should return true for 1', () => {
+				const expected = true;
+				const resp = isFinite(1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 1.0', () => {
+				const expected = true;
+				const resp = isFinite(1.0);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 1.1', () => {
+				const expected = true;
+				const resp = isFinite(1.1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 0', () => {
+				const expected = true;
+				const resp = isFinite(0);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 0.0', () => {
+				const expected = true;
+				const resp = isFinite(0.0);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for 0.1', () => {
+				const expected = true;
+				const resp = isFinite(0.1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for -1', () => {
+				const expected = true;
+				const resp = isFinite(-1);
+				expect(resp).toEqual(expected);
+			});
+			it('should return true for Infinity', () => {
+				const expected = false;
+				const resp = isFinite(Infinity);
+				expect(resp).toEqual(expected);
+			});
+		});
+		describe('isNull - Unit Tests', () => {
+			it('should return true for null', () => {
+				const expected = true;
+				const resp = isNull(null);
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for {}', () => {
+				const expected = false;
+				const resp = isNull({});
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for []', () => {
+				const expected = false;
+				const resp = isNull([]);
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for new Date()', () => {
+				const expected = false;
+				const resp = isNull(new Date());
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for new RegExp()', () => {
+				const expected = false;
+				const resp = isNull(new RegExp(""));
+				expect(resp).toEqual(expected);
+			});
+			it('should return false for new Error()', () => {
+				const expected = false;
+				const resp = isNull(new Error());
+				expect(resp).toEqual(expected);
+			});
 		});
 	});
 

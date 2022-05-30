@@ -6,6 +6,11 @@ const config: Config.InitialOptions = {
   transform: {
     "^.+\\.ts?$": "ts-jest",
   },
+  moduleFileExtensions: ["ts", "js", "json"],
+  watchPathIgnorePatterns: ["<rootDir>/node_modules/"],
+  testRegex: ".*\\.test\\.tsx?$",
+  coverageDirectory: "./coverage/",
+  collectCoverage: true,
   // setupFilesAfterEnv: ['./tests/bootstrap.ts']
 };
 export default config;

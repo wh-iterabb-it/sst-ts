@@ -19,7 +19,7 @@ function isBoolean(obj: any): boolean {
  * @return {boolean} -
  **/
 function isFinite(int: any): boolean {
-  return isInteger(int) && !isNaN(parseFloat(int));
+  return Number.isFinite(int);
 }
 
 /**

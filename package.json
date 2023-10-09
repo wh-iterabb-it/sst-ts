@@ -23,7 +23,7 @@
     "test:lint:fix": "eslint . --fix 'lib/**/*.ts'"
   },
   "dependencies": {
-    "winston": "^3.10.0"
+    "winston": "^3.11.0"
   },
   "devDependencies": {
     "@types/jest": "27.5.1",
